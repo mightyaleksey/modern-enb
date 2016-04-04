@@ -9,6 +9,7 @@
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "enb": "1.2.0",
+    "lodash.defaults": "^4.0.1",
     "postcss": "^5.0.19",
     "postcss-import": "^8.0.2",
     "postcss-url": "^5.1.1"

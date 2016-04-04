@@ -1,4 +1,5 @@
 const concat = require('../lib/concat');
+const defaults = require('lodash.defaults');
 const extractFilepath = require('../lib/extractFilepath');
 const outputWarnings = require('../lib/outputWarnings');
 const postcss = require('postcss');
@@ -26,7 +27,8 @@ module.exports = require('enb/lib/build-flow').create()
     ];
 
     if (this._url) {
-      toArray(this._url).forEach(opts => plugins.push(atUrl(opts)));
+      toArray(this._url).forEach(opts =>
+        plugins.push(atUrl(defaults({}, opts, {basePath: cwd}))));
     }
 
     if (this._autoprefixer) {
