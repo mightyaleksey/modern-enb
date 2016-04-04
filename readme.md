@@ -28,7 +28,13 @@ module.exports = function (config) {
 
     nodeConfig.addTechs([
       [require('modern-enb/techs/css'), {
-        autoprefixer: {browsers: ['last 2 versions']}
+        autoprefixer: {
+          browsers: ['last 2 versions'],
+        },
+        url: {
+          filter: /\.svg$/,
+          url: 'inline',
+        },
       }],
     ]);
   });
